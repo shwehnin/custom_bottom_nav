@@ -12,16 +12,22 @@ class AddPage extends GetView<AddController> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Obx(() => Text(controller.counter.toString())),
+              Obx(
+                () => Text(
+                  controller.counter.toString(),
+                  style: TextStyle(fontSize: 30),
+                ),
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
                   elevation: 0,
+                  iconColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                child: Text("Increase"),
+                child: Icon(Icons.add, size: 30),
                 onPressed: () {
                   controller.incrementCounter();
                 },
